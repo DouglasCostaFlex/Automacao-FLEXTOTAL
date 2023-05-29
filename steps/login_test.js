@@ -1,4 +1,4 @@
-Feature('Login');
+Feature('Login').tag('Login');
 const { I } = inject()
 
 //VARIAVEIS DO LOGIN
@@ -39,9 +39,9 @@ Scenario('Login com senha inválida', () => {
     I.fillField(CampoSenha, '3523')
     //EU APERTO NO BOTAO
     I.click(BtnLogin)
+    I.wait(3)
     //EU ESPERO PELA MENSAGEM NO POP UP 'SENHA INVÁLIDA'
     I.seeInPopup('Senha inválida')
-    I.wait(3)
     //EU APERTO OK NO POP DE LOGIN INVALIDO
     I.acceptPopup()
 

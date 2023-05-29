@@ -11,6 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "codeceptjs": "^3.4.1",
+    "codeceptjs-resemblehelper": "^1.9.7",
+    "codeceptjs-testrail": "^1.10.2",
+    "codeceptjs-tesults": "^1.1.0",
+    "mocha-junit-reporter": "^2.2.0",
+    "mochawesome": "^7.1.3",
     "webdriverio": "^8.10.5"
   },
   "devDependencies": {

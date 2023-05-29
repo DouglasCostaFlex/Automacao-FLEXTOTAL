@@ -1,0 +1,221 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2023-05-29T14:11:04.630Z",
+    "end": "2023-05-29T14:11:33.370Z",
+    "duration": 28740,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b9bb4eef-368f-40b0-9be5-12a037a9c88c",
+      "title": "",
+      "fullFile": "C:\\Users\\flexmobile\\Documents\\AUTOMAÇOES\\AUTOMACAO-FLEXTOTAL\\Automacao-FLEXTOTAL\\steps\\login_test.js",
+      "file": "\\steps\\login_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f8f6a03b-5a8b-44f7-aabd-bbcee4f8311c",
+          "title": "Login",
+          "fullFile": "C:\\Users\\flexmobile\\Documents\\AUTOMAÇOES\\AUTOMACAO-FLEXTOTAL\\Automacao-FLEXTOTAL\\steps\\login_test.js",
+          "file": "\\steps\\login_test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: codeceptjs.beforeSuite in \"Login\"",
+              "fullTitle": "Login \"before all\" hook: codeceptjs.beforeSuite in \"Login\"",
+              "timedOut": false,
+              "duration": 10944,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteSetup(suite)",
+              "err": {},
+              "uuid": "0c8e9d8f-98bc-44f3-8997-b1c1e5c34638",
+              "parentUUID": "f8f6a03b-5a8b-44f7-aabd-bbcee4f8311c",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: codeceptjs.before in \"Login\"",
+              "fullTitle": "Login \"before each\" hook: codeceptjs.before in \"Login\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.setup(suite)",
+              "err": {},
+              "uuid": "5e65dd00-b1a9-453e-9766-231ee04d334e",
+              "parentUUID": "f8f6a03b-5a8b-44f7-aabd-bbcee4f8311c",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: codeceptjs.afterSuite in \"Login\"",
+              "fullTitle": "Login \"after all\" hook: codeceptjs.afterSuite in \"Login\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteTeardown(suite)",
+              "err": {},
+              "uuid": "5ed57940-c0ca-4ff8-82ef-a6246bcf3dfa",
+              "parentUUID": "f8f6a03b-5a8b-44f7-aabd-bbcee4f8311c",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook: finalize codeceptjs in \"Login\"",
+              "fullTitle": "Login \"after each\" hook: finalize codeceptjs in \"Login\"",
+              "timedOut": false,
+              "duration": 71,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.teardown(suite)",
+              "err": {},
+              "uuid": "0caca721-845c-4168-b75b-5da641d7500e",
+              "parentUUID": "f8f6a03b-5a8b-44f7-aabd-bbcee4f8311c",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Login com usúario errado @UsuarioErrado",
+              "fullTitle": "Login: Login com usúario errado @UsuarioErrado",
+              "timedOut": false,
+              "duration": 11121,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//EU AGUARDO\n    I.wait(3)\n    //VOU ATÉ A PAGINA FLEX TOTAL.\n    I.amOnPage(FLEXTOTAL)\n    //RESOLVER ERRO DE PAGINA NAO SEGURA//\n    I.click('//*[@id=\"details-button\"]')\n    I.click('//*[@id=\"proceed-link\"]')\n    // RESOLVENDO ERRO DE PAGINA SEGURA//\n    I.wait(3)\n    //EU COLOCO MEU ID LOGIN ERRADO\n    I.fillField(CampoEmail, 'flexmo')\n    //EU COLOCO MINHA SENHA CORRETA\n    I.fillField(CampoSenha, '48303523')\n    //EU APERTO NO BOTAO\n    I.click(BtnLogin)\n    I.wait(3)\n    //EU ESPERO PELA MENSAGEM NO POP UP 'LOGIN INVALIDO''\n    I.seeInPopup('Login inválido')\n    //EU APERTO OK NO POP DE LOGIN INVALIDO\n    I.acceptPopup()",
+              "err": {},
+              "uuid": "52922b9f-0754-4c26-a124-cedb9504fdc8",
+              "parentUUID": "f8f6a03b-5a8b-44f7-aabd-bbcee4f8311c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com senha inválida @SenhaErrada",
+              "fullTitle": "Login: Login com senha inválida @SenhaErrada",
+              "timedOut": false,
+              "duration": 3865,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//EU COLOCO ID DE USUARIO CORRETO\n    I.fillField(CampoEmail, 'flexmobile')\n    //EU COLOCO MINHA SENHA INVALIDA\n    I.fillField(CampoSenha, '3523')\n    //EU APERTO NO BOTAO\n    I.click(BtnLogin)\n    //EU ESPERO PELA MENSAGEM NO POP UP 'SENHA INVÁLIDA'\n    I.seeInPopup('Senha inválida')\n    I.wait(3)\n    //EU APERTO OK NO POP DE LOGIN INVALIDO\n    I.acceptPopup()",
+              "err": {
+                "message": "no such alert: no such alert\n  (Session info: chrome=113.0.5672.127)",
+                "estack": "no such alert: no such alert\n  (Session info: chrome=113.0.5672.127)\n    at getErrorFromResponseBody (file:///C:/Users/flexmobile/Documents/AUTOMA%C3%87OES/AUTOMACAO-FLEXTOTAL/Automacao-FLEXTOTAL/node_modules/webdriver/build/utils.js:194:12)\n    at NodeJSRequest._request (file:///C:/Users/flexmobile/Documents/AUTOMA%C3%87OES/AUTOMACAO-FLEXTOTAL/Automacao-FLEXTOTAL/node_modules/webdriver/build/request/index.js:164:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Browser.wrapCommandFn (file:///C:/Users/flexmobile/Documents/AUTOMA%C3%87OES/AUTOMACAO-FLEXTOTAL/Automacao-FLEXTOTAL/node_modules/@wdio/utils/build/shim.js:72:29)",
+                "diff": null
+              },
+              "uuid": "d5c120f6-e127-4509-af01-19d6e35fab14",
+              "parentUUID": "f8f6a03b-5a8b-44f7-aabd-bbcee4f8311c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com dados corretos @LoginCorreto",
+              "fullTitle": "Login: Login com dados corretos @LoginCorreto",
+              "timedOut": false,
+              "duration": 2142,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "I.fillField(CampoEmail, 'flexmobile')\n    //EU COLOCO MINHA SENHA\n    I.fillField(CampoSenha, '48303523')\n    //EU APERTO NO BOTAO\n    I.click(BtnLogin)\n    //EU ESPERO PELO ELEMENTO 'FLEXMOBILE'\n    I.waitForElement('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/favoritos/div/mat-card[1]/div/h3')\n    I.wait(1)",
+              "err": {
+                "message": "Error: element (/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/favoritos/div/mat-card[1]/div/h3) still not present on page after 1 sec",
+                "estack": "Error: element (/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/favoritos/div/mat-card[1]/div/h3) still not present on page after 1 sec\n    at file:///C:/Users/flexmobile/Documents/AUTOMA%C3%87OES/AUTOMACAO-FLEXTOTAL/Automacao-FLEXTOTAL/node_modules/webdriverio/build/commands/browser/waitUntil.js:39:23\n    at async Browser.wrapCommandFn (file:///C:/Users/flexmobile/Documents/AUTOMA%C3%87OES/AUTOMACAO-FLEXTOTAL/Automacao-FLEXTOTAL/node_modules/@wdio/utils/build/shim.js:72:29)",
+                "diff": null
+              },
+              "uuid": "4b781a16-1db2-4614-9570-3a2ca5cf6b3e",
+              "parentUUID": "f8f6a03b-5a8b-44f7-aabd-bbcee4f8311c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "52922b9f-0754-4c26-a124-cedb9504fdc8"
+          ],
+          "failures": [
+            "d5c120f6-e127-4509-af01-19d6e35fab14",
+            "4b781a16-1db2-4614-9570-3a2ca5cf6b3e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 17128,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {},
+      "version": "6.2.0"
+    }
+  }
+}
