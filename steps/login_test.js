@@ -25,11 +25,8 @@ Scenario('Login com usúario errado', () => {
     //EU APERTO NO BOTAO
     I.click(BtnLogin)
     I.wait(3)
-    //EU ESPERO PELA MENSAGEM NO POP UP 'LOGIN INVALIDO''
     I.seeInPopup('Login inválido')
-    //EU APERTO OK NO POP DE LOGIN INVALIDO
-    I.acceptPopup()
-
+   
 }).tag('UsuarioErrado');
 Scenario('Login com senha inválida', () => {
 
@@ -43,7 +40,6 @@ Scenario('Login com senha inválida', () => {
     //EU ESPERO PELA MENSAGEM NO POP UP 'SENHA INVÁLIDA'
     I.seeInPopup('Senha inválida')
     //EU APERTO OK NO POP DE LOGIN INVALIDO
-    I.acceptPopup()
 
 }).tag('SenhaErrada');
 
