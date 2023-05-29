@@ -13,7 +13,8 @@ exports.config = {
   helpers: {
     WebDriver: {
       url: 'https://192.168.1.128:9090/flextotal/login',
-      browser: 'chrome'
+      browser: 'chrome',
+      restart: false
     }
   },
   include: {
