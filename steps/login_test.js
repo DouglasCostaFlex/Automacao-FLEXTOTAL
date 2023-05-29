@@ -1,6 +1,6 @@
-Feature('login');
+Feature('Login');
 
-Scenario('test something',  ({ I }) => {
+Scenario('Login',  ({ I }) => {
 
     I.wait(3)
     I.amOnPage('https://192.168.1.128:9090/flextotal/login')
