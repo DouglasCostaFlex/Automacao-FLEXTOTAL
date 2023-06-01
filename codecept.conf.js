@@ -1,4 +1,7 @@
-const { setHeadlessWhen, setCommonPlugins } = require('@codeceptjs/configure');
+const {
+  setHeadlessWhen,
+  setCommonPlugins
+} = require('@codeceptjs/configure');
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
@@ -15,14 +18,22 @@ exports.config = {
     WebDriver: {
       url: 'https://192.168.1.128:9090/flextotal/login',
       browser: 'chrome',
-      restart: false
+      restart: false,
+      windowSize: '1380x768',
+      keepBrowserState: true,
+      keepCookies: true //  EU MANTENHO OS COOKIES A CADA TESTE
+      // desiredCapabilities: {
+      //   chromeOptions: {
+      //     args: [ "--headless", "--disable-gpu", "--no-sandbox" ]
+      //   }}
+
     },
 
-    "ResembleHelper" : {
+    "ResembleHelper": {
       "require": "codeceptjs-resemblehelper",
-      "screenshotFolder" : "./tests/output/",
-      "baseFolder": "./tests/screenshots/base/",
-      "diffFolder": "./tests/screenshots/diff/"
+      "screenshotFolder": "./output/",
+      "baseFolder": "./BaseImage/",
+      "diffFolder": "./diff/"
     }
 
   },
@@ -38,7 +49,8 @@ exports.config = {
 
 
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
+    ZoomMenosPage: "./pages/ZoomMenos.js"
   },
   name: 'Automacao-FLEXTOTAL'
 }
