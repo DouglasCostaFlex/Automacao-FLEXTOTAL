@@ -9,7 +9,7 @@ const BtnLogin = '/html/body/my-app/login/div/div/form/button'
 const PaginaAppWMS = 'https://192.168.1.128:9090/flextotal/user/coletor'
 
 
-Scenario('Tela de AppWMS', () => {
+Scenario('Tela do AppWMS', () => {
 
     ZoomMenosPage.ZoomMenos()
     //VOU NA TELA WMS
@@ -19,7 +19,7 @@ Scenario('Tela de AppWMS', () => {
 
 });
 
-Scenario('Consultas ', () => {
+Scenario('Tela Consultas ', () => {
 
     ZoomMenosPage.ZoomMenos()
     //EU VOU NA TELA DE CONSULTAS
@@ -42,7 +42,7 @@ Scenario('01-Consultar itens do endereço errado', () => {
     I.wait(1)
     //EU ESPERO PELA MENSAGEM DE ERRO
     I.waitForText('Não há itens vinculados a este endereço')
-    
+
 
 });
 
@@ -66,6 +66,7 @@ Scenario('02-Consultar itens do endereço', () => {
     I.wait(2)
     //EU CLICO EM LOTES
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisas-itens-endereco/div/div/mat-table/mat-row[1]/mat-cell[2]')
+    I.wait(3)
     I.waitForText('LOTE01', 5)
     I.waitForText('LOTE02', 5)
 
@@ -113,6 +114,8 @@ Scenario('04-Consulta Endereços do item com Flag Livres Desmarcado ', () => {
     I.wait(2)
 
 });
+
+//CONTAGEM DE ESTOQUE
 
 Scenario('05-Contagem de estoque Contagem fechada', () => {
 
@@ -230,6 +233,123 @@ Scenario('10-Contagem de estoque - Pular Itens', () => {
     I.click('CONFIRMAR')
 
 }).tag('ContagemDeEstoquePularItem');
+
+//CONFERENCIA DE ENTRADA
+
+Scenario('11-Conferencia de entrada', () => {
+
+    //EU VOU ATE A PAGINA W29
+    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/pesquisar')
+    //EU ACEITO POPUP
+    I.acceptPopup()
+    //EU ESPERO
+    I.wait(2)
+    //EU COLOCO O ID GERAL INVÁLIDO
+    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[1]/mat-form-field/div/div[1]/div/textarea', '0000001 ')
+    //EU ESPERO    
+    I.wait(1)
+    //EU CLICO NO BOTAO PESQUISAR
+    I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[2]/button')
+    //EU ESPERO PELO TEXTO
+    I.waitForText('Tarefa não encontrada!')
+    //EU ESPERO
+
+}).tag('ConferenciaDeEntradaIDinvalido');
+
+Scenario('12-Conferencia de entrada', () => {
+
+    //EU VOU ATE A PAGINA W29
+    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/pesquisar')
+    //EU ACEITO POPUP
+    I.acceptPopup()
+    //EU ESPERO
+    I.wait(2)
+    //EU COLOCO O ID GERAL 
+    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[1]/mat-form-field/div/div[1]/div/textarea', '1002704747906 ')
+    //EU ESPERO    
+    I.wait(1)
+    //EU CLICO NO BOTAO PESQUISAR
+    I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[2]/button')
+    //EU ESPERO PELO TEXTO
+    I.waitForText('Nota Fiscal Nr: 000235 do Fornecedor: 52549 - 1002 UTILIDADES LTDA EPP')
+    //EU ESPERO
+    I.wait(2)
+    //EU CLICO NO BOTAO CONTINUAR
+    I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[3]/button[1]')
+
+}).tag('ConferenciaDeEntrada');
+
+Scenario('13-Conferencia de entrada por unidade - CD INVÁLIDO', () => {
+
+      //EU COLOCO O CD DDE BARRAS DO PRODUTO INVÁLIDO
+      I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[2]/mat-form-field/div/div[1]/div/input', '00001')
+      //EU ESPERO
+      I.wait(1)
+      //EU CLICO NO BOTAO PARA CONTINUAR
+      I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[2]/button[1]')
+      //EU ADICIONO O LOTE
+     I.waitForText('Este item não está na tarefa.')
+
+}).tag('ConferenciaDeEntradaPorUnidadeCDinválido');
+
+
+Scenario('14-Conferencia de entrada por unidade - válido', () => {
+    
+
+    //EU RECARREGO A PAGINA
+    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
+    I.acceptPopup()
+    //EU COLOCO O CD DDE BARRAS DO PRODUTO
+    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[2]/mat-form-field/div/div[1]/div/input', '1234')
+    //EU ESPERO
+    I.wait(1)
+    //EU CLICO NO BOTAO PARA CONTINUAR
+    I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[2]/button[1]')
+    //EU ADICIONO O LOTE
+    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[4]/div[1]/mat-form-field/div/div[1]/div/input', ' lot uni automacao')
+    //EU COLOCO DATA DE FABRICAÇÃO
+    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[4]/div[2]/date-picker/mat-form-field/div/div[1]/div[1]/input[1]', '20/01/2023')
+    //EU COLOCO DATA DE VENCIMENTOS
+    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[4]/div[3]/date-picker/mat-form-field/div/div[1]/div[1]/input[1]', '20/01/2026')
+    I.wait(2)
+    //EU CLICO EM 'CONFIRMAR LOTE'
+    I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[5]/button[2]')
+    //EU CLICO EM 'NOVO LOTE'
+    I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[5]/button[1]')
+    I.wait(1)
+
+}).tag('ConferenciaDeEntradaPorUnidade');
+
+Scenario('15-Conferencia de entrada por unidade - Menu - Listar Itens ', () => {
+
+    //EU RECARREGO A PAGINA
+    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
+    //ACEITO O POPUP
+    I.acceptPopup()
+    I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/mat-toolbar/button')
+    I.wait(2)
+    I.click('Listar Itens')
+    I.wait(2)
+    I.waitForText('12125 - CONCENTRADO MAQUINA PRETO (B) 945 ML 96-2 RENNER')
+
+}).tag('ConferenciaDeEntrada-Menu-ListarItems');
+
+Scenario('16-Conferencia de entrada por unidade - Menu - Reiniciar Conferência ', () => {
+   
+    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
+    //ACEITO O POPUP
+    I.acceptPopup()
+    //EU CLICO NO BOTAO 'MENU'
+    I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/mat-toolbar/button')
+    I.wait(2)
+    //EU APERTO EM 'REINICIAR CONFERENCIA'
+    I.click('Reiniciar Conferência')
+    I.wait(1)
+    //EU APERTO NO BOTAO SIM
+    I.click('/html/body/div[2]/div[2]/div/mat-dialog-container/confirmation-dialog-component/button[1]')
+    I.wait(5)
+
+}).tag('ConferenciaDeEntrada-Menu-ReiniciarConferência');
 
 
 
