@@ -69,5 +69,5 @@ Scenario('Login com dados corretos', () => {
   I.fillField(CampoSenha, '48303523')
   //EU APERTO NO BOTAO
   I.forceClick(BtnLogin)
-  I.waitForElement(BtnMenu)
+  I.waitForElement(BtnMenu,5)
 }).tag('LoginCorreto');

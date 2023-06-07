@@ -5,7 +5,7 @@ const { I, ZoomMenosPage } = inject()
 
 //CONFERENCIA DE ENTRADA
 
-Scenario('01-Conferencia de entrada', () => {
+Scenario('104-01-Conferencia de entrada', () => {
 
     //EU VOU ATE A PAGINA W29
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/pesquisar')
@@ -25,7 +25,7 @@ Scenario('01-Conferencia de entrada', () => {
 
 }).tag('104-01');
 
-Scenario('02-Conferencia de entrada', () => {
+Scenario('104-02-Conferencia de entrada', () => {
 
     //EU VOU ATE A PAGINA W29
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/pesquisar')
@@ -45,10 +45,11 @@ Scenario('02-Conferencia de entrada', () => {
     I.wait(2)
     //EU CLICO NO BOTAO CONTINUAR
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[3]/button[1]')
+    I.wait(2)
 
 }).tag('104-02');
 
-Scenario('03-Conferencia de entrada por unidade - CD INVÁLIDO', () => {
+Scenario('104-03-Conferencia de entrada por unidade - CD Inválido', () => {
 
     //EU COLOCO O CD DDE BARRAS DO PRODUTO INVÁLIDO
     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[2]/mat-form-field/div/div[1]/div/input', '00001')
@@ -57,12 +58,13 @@ Scenario('03-Conferencia de entrada por unidade - CD INVÁLIDO', () => {
     //EU CLICO NO BOTAO PARA CONTINUAR
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[2]/button[1]')
     //EU ADICIONO O LOTE
+    I.wait(2)
     I.waitForText('Este item não está na tarefa.')
 
 }).tag('104-03');
 
 
-Scenario('04-Conferencia de entrada por unidade - válido', () => {
+Scenario('104-04-Conferencia de entrada por unidade - CD Válido', () => {
 
 
     //EU RECARREGO A PAGINA
@@ -89,7 +91,7 @@ Scenario('04-Conferencia de entrada por unidade - válido', () => {
 
 }).tag('104-04');
 
-Scenario('05-Conferencia de entrada por unidade - Menu - Listar Itens ', () => {
+Scenario('104-05-Conferencia de entrada por unidade - Menu - Listar Itens ', () => {
 
     //EU RECARREGO A PAGINA
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
@@ -103,7 +105,7 @@ Scenario('05-Conferencia de entrada por unidade - Menu - Listar Itens ', () => {
 
 }).tag('104-05');
 
-Scenario('06-Conferencia de entrada por unidade - Menu - Informar Quantidade inválido', () => {
+Scenario('104-06-Conferencia de entrada por unidade - Menu - Informar Quantidade inválido', () => {
 
     ZoomMenosPage.ZoomMenos()
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
@@ -124,7 +126,7 @@ Scenario('06-Conferencia de entrada por unidade - Menu - Informar Quantidade inv
 
 }).tag('104-06');
 
-Scenario('07-Conferencia de entrada por unidade - Menu - Informar Quantidade válido', () => {
+Scenario('104-07-Conferencia de entrada por unidade - Menu - Informar Quantidade válido', () => {
 
     ZoomMenosPage.ZoomMenos()
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
@@ -145,7 +147,7 @@ Scenario('07-Conferencia de entrada por unidade - Menu - Informar Quantidade vá
 
 }).tag('104-07');
 
-Scenario('08-Conferencia de entrada por unidade - Menu - Enviar Pendentes ', () => {
+Scenario('104-08-Conferencia de entrada por unidade - Menu - Enviar Pendentes ', () => {
     
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
     //ACEITO O POPUP
@@ -159,7 +161,7 @@ Scenario('08-Conferencia de entrada por unidade - Menu - Enviar Pendentes ', () 
 
 }).tag('104-08');
 
-Scenario('09-Conferencia de entrada por unidade - Menu - Reiniciar Conferência ', () => {
+Scenario('104-09-Conferencia de entrada por unidade - Menu - Reiniciar Conferência ', () => {
 
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
     //ACEITO O POPUP

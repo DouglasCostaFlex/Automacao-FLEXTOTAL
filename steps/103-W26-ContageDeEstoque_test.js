@@ -4,7 +4,7 @@ const { I, ZoomMenosPage } = inject()
 
 //CONTAGEM DE ESTOQUE
 
-Scenario('01-Contagem de estoque Contagem fechada', () => {
+Scenario('103-01-Contagem de estoque Contagem fechada', () => {
 
     ZoomMenosPage.ZoomMenos()
     I.wait(2)
@@ -25,7 +25,7 @@ Scenario('01-Contagem de estoque Contagem fechada', () => {
 }).tag('103-01');
 
 
-Scenario('02-Contagem de estoque id errado', () => {
+Scenario('103-02-Contagem de estoque id errado', () => {
 
     ZoomMenosPage.ZoomMenos()
     //EU VOU PARA A PAGINA DE CONTAGEM DE ESTOQUE
@@ -46,7 +46,7 @@ Scenario('02-Contagem de estoque id errado', () => {
 
 
 
-Scenario('03-Contagem de estoque', () => {
+Scenario('103-03-Contagem de estoque', () => {
 
     ZoomMenosPage.ZoomMenos()
     //EU VOU PARA A PAGINA DE CONTAGEM DE ESTOQUE
@@ -68,27 +68,27 @@ Scenario('03-Contagem de estoque', () => {
     I.wait(3)
     I.waitForText('CONFIRMAR')
     I.click('CONFIRMAR')
-    I.wait(3)
-    I.waitForText('OK')
+    I.waitForText('Realizar recontagem do item.',3)
     I.click('OK')
+
 
 
 }).tag('103-03');
 
-Scenario('04-Contagem de estoque - Listar Itens', () => {
+Scenario('103-04-Contagem de estoque - Listar Itens', () => {
 
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/contagem-component/div/mat-toolbar/button')
     I.wait(3)
     I.click('Listar Itens')
     I.wait(3)
-    I.waitForText('10155')
+    I.waitForText('10155',5)
     I.click('/html/body/div[2]/div[2]/div/mat-dialog-container/ng-component/mat-dialog-content/mat-list/a[1]/div/div[2]/span[2]')
     I.wait(5)
 
 }).tag('103-04');
 
 
-Scenario('05-Contagem de estoque - Reiniciar Itens', () => {
+Scenario('103-05-Contagem de estoque - Reiniciar Itens', () => {
 
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/contagem/1002064874306')
     I.acceptPopup()
@@ -107,7 +107,7 @@ Scenario('05-Contagem de estoque - Reiniciar Itens', () => {
 }).tag('103-05');
 
 
-Scenario('06-Contagem de estoque - Pular Itens', () => {
+Scenario('103-06-Contagem de estoque - Pular Itens', () => {
 
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/contagem/1002064874306')
     I.acceptPopup()
@@ -116,7 +116,7 @@ Scenario('06-Contagem de estoque - Pular Itens', () => {
     I.wait(2)
     I.click('Pular Item')
     I.wait(3)
-    I.waitForText('CONFIRMAR',20)
+    I.waitForText('CONFIRMAR',5)
     I.click('CONFIRMAR')
 
 }).tag('103-06');

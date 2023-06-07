@@ -10,7 +10,7 @@ Scenario('Tela Consultas ', () => {
 
 });
 
-Scenario('01-Consultar itens do endereço errado', () => {
+Scenario('102-01-Consultar itens do endereço errado', () => {
 
     ZoomMenosPage.ZoomMenos()
     //VOU NA TELA CONSULTAR ITENS DE ENDEREÇO
@@ -28,7 +28,7 @@ Scenario('01-Consultar itens do endereço errado', () => {
 }).tag('102-01');
 
 
-Scenario('02-Consultar itens do endereço', () => {
+Scenario('102-02-Consultar itens do endereço', () => {
 
     ZoomMenosPage.ZoomMenos()
     //VOU NA TELA CONSULTAR ITENS DE ENDEREÇO
@@ -53,7 +53,7 @@ Scenario('02-Consultar itens do endereço', () => {
 
 }).tag('102-02');
 
-Scenario('03-Consulta Endereços do item (Flag Livres Marcado) ', () => {
+Scenario('102-03-Consulta Endereços do item (Flag Livres Marcado) ', () => {
 
     ZoomMenosPage.ZoomMenos()
     //EU VOU PARA PESQUISA DE ENDEREÇOS DO ITEM
@@ -75,7 +75,7 @@ Scenario('03-Consulta Endereços do item (Flag Livres Marcado) ', () => {
     I.wait(2)
 }).tag('102-03');
 
-Scenario('04-Consulta Endereços do item com Flag Livres Desmarcado ', () => {
+Scenario('102-04-Consulta Endereços do item com Flag Livres Desmarcado ', () => {
 
     ZoomMenosPage.ZoomMenos()
     //EU VOU PARA PESQUISA DE ENDEREÇOS DO ITEM
