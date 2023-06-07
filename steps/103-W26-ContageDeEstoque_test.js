@@ -69,8 +69,6 @@ Scenario('103-03-Contagem de estoque', () => {
     I.waitForText('CONFIRMAR')
     I.click('CONFIRMAR')
     I.waitForText('Realizar recontagem do item.',3)
-    I.click('OK')
-
 
 
 }).tag('103-03');
