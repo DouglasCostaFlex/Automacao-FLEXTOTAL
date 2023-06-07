@@ -107,7 +107,7 @@ Scenario('104-05-Conferencia de entrada por unidade - Menu - Listar Itens ', () 
 
 Scenario('104-06-Conferencia de entrada por unidade - Menu - Informar Quantidade inválido', () => {
 
-    ZoomMenosPage.ZoomMenos()
+  
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
     //ACEITO O POPUP
     I.acceptPopup()
@@ -128,7 +128,7 @@ Scenario('104-06-Conferencia de entrada por unidade - Menu - Informar Quantidade
 
 Scenario('104-07-Conferencia de entrada por unidade - Menu - Informar Quantidade válido', () => {
 
-    ZoomMenosPage.ZoomMenos()
+ 
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
     //ACEITO O POPUP
     I.acceptPopup()

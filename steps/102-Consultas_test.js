@@ -2,7 +2,7 @@ Feature('W26-Consultas').tag('102');
 const { I, ZoomMenosPage } = inject()
 Scenario('Tela Consultas ', () => {
 
-    ZoomMenosPage.ZoomMenos()
+    
     //EU VOU NA TELA DE CONSULTAS
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/coletor/pesquisas')
     I.wait(1)
@@ -12,7 +12,7 @@ Scenario('Tela Consultas ', () => {
 
 Scenario('102-01-Consultar itens do endereço errado', () => {
 
-    ZoomMenosPage.ZoomMenos()
+   
     //VOU NA TELA CONSULTAR ITENS DE ENDEREÇO
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/coletor/pesquisaItensEndereco')
     I.wait(2)
@@ -30,7 +30,7 @@ Scenario('102-01-Consultar itens do endereço errado', () => {
 
 Scenario('102-02-Consultar itens do endereço', () => {
 
-    ZoomMenosPage.ZoomMenos()
+   
     //VOU NA TELA CONSULTAR ITENS DE ENDEREÇO
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/coletor/pesquisaItensEndereco')
     I.acceptPopup('RECARREGAR')
@@ -55,7 +55,7 @@ Scenario('102-02-Consultar itens do endereço', () => {
 
 Scenario('102-03-Consulta Endereços do item (Flag Livres Marcado) ', () => {
 
-    ZoomMenosPage.ZoomMenos()
+   
     //EU VOU PARA PESQUISA DE ENDEREÇOS DO ITEM
     I.amOnPage(' https://192.168.1.128:9090/flextotal/user/coletor/pesquisaEnderecosItem')
     //ACEITO MUDAR DE PAGINA 
@@ -77,7 +77,7 @@ Scenario('102-03-Consulta Endereços do item (Flag Livres Marcado) ', () => {
 
 Scenario('102-04-Consulta Endereços do item com Flag Livres Desmarcado ', () => {
 
-    ZoomMenosPage.ZoomMenos()
+    
     //EU VOU PARA PESQUISA DE ENDEREÇOS DO ITEM
     I.amOnPage(' https://192.168.1.128:9090/flextotal/user/coletor/pesquisaEnderecosItem')
     //ACEITO MUDAR DE PAGINA 

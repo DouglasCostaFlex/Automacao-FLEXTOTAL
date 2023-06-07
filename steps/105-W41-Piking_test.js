@@ -27,7 +27,7 @@ Scenario('105-01 Filtros', () => {
 
 Scenario('105-02 Filtros - Origem', () => {
 
-    ZoomMenosPage.ZoomMenos()
+   
     //EU VOU ATE A PAGINA W29
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/monitor/W41')
     //EU ACEITO POPUP
@@ -49,7 +49,7 @@ Scenario('105-02 Filtros - Origem', () => {
 
 Scenario('105-03 Filtros - Quantidade', () => {
 
-    ZoomMenosPage.ZoomMenos()
+ 
     //EU VOU ATE A PAGINA W29
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/monitor/W41')
     //EU ACEITO POPUP

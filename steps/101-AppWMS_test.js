@@ -11,7 +11,7 @@ const PaginaAppWMS = 'https://192.168.1.128:9090/flextotal/user/coletor'
 
 Scenario('101-01-Tela do AppWMS', () => {
 
-    ZoomMenosPage.ZoomMenos()
+    
     //VOU NA TELA WMS
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/coletor')
     I.acceptPopup()

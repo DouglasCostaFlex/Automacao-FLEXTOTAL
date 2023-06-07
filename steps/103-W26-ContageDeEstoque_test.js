@@ -6,7 +6,7 @@ const { I, ZoomMenosPage } = inject()
 
 Scenario('103-01-Contagem de estoque Contagem fechada', () => {
 
-    ZoomMenosPage.ZoomMenos()
+
     I.wait(2)
     //EU VOU PARA A PAGINA DE CONTAGEM DE ESTOQUE
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/contagem/pesquisar')
@@ -27,7 +27,7 @@ Scenario('103-01-Contagem de estoque Contagem fechada', () => {
 
 Scenario('103-02-Contagem de estoque id errado', () => {
 
-    ZoomMenosPage.ZoomMenos()
+
     //EU VOU PARA A PAGINA DE CONTAGEM DE ESTOQUE
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/contagem/pesquisar')
     //EU ACEITO O POPUP
@@ -48,7 +48,7 @@ Scenario('103-02-Contagem de estoque id errado', () => {
 
 Scenario('103-03-Contagem de estoque', () => {
 
-    ZoomMenosPage.ZoomMenos()
+
     //EU VOU PARA A PAGINA DE CONTAGEM DE ESTOQUE
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/contagem/pesquisar')
     //EU ACEITO O POPUP
@@ -67,8 +67,9 @@ Scenario('103-03-Contagem de estoque', () => {
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/contagem-component/div/form/div/div[3]/button[1]')
     I.wait(3)
     I.waitForText('CONFIRMAR')
-    I.click('CONFIRMAR')
+    I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/contagem-component/div/form/div/div[3]/button[2]')
     I.waitForText('Realizar recontagem do item.',3)
+    I.click('OK')
 
 
 }).tag('103-03');
