@@ -1,4 +1,4 @@
-Feature('AppWMS').tag('AppWMS');
+Feature('TelaInicialAppWMS').tag('AppWMS');
 const { I, ZoomMenosPage } = inject()
 
 const BtnMenu = '/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/mat-toolbar/button'
