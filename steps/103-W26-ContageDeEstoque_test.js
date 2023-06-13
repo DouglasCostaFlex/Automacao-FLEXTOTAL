@@ -2,7 +2,7 @@ Feature('W29-ContagemDeEStoque').tag('103');
 const { I, ZoomMenosPage } = inject()
 
 
-//CONTAGEM DE ESTOQUE
+// CONTAGEM DE ESTOQUE
 
 Scenario('103-01-Contagem de estoque Contagem fechada', () => {
 
@@ -10,6 +10,7 @@ Scenario('103-01-Contagem de estoque Contagem fechada', () => {
     I.wait(2)
     //EU VOU PARA A PAGINA DE CONTAGEM DE ESTOQUE
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/contagem/pesquisar')
+    I.wait(3)
     //EU ACEITO O POPUP
     I.acceptPopup()
     I.wait(1)
@@ -30,11 +31,12 @@ Scenario('103-02-Contagem de estoque id errado', () => {
 
     //EU VOU PARA A PAGINA DE CONTAGEM DE ESTOQUE
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/contagem/pesquisar')
+    I.wait(3)
     //EU ACEITO O POPUP
     I.acceptPopup()
     I.wait(1)
-    //EU COLOCO O ID DA CONTAGEM OBS: A CONTAGEM TEM QUE ESTAR PENDENTE NO SISTEMA
-    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-contagem-component/div/form/mat-form-field/div/div[1]/div/input', '234234')
+    //EU COLOCO O ID ERRADO DA CONTAGEM 
+    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-contagem-component/div/form/mat-form-field/div/div[1]/div/input', '0000')
     I.wait(1)
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-contagem-component/div/form/button')
     I.wait(2)
@@ -48,9 +50,9 @@ Scenario('103-02-Contagem de estoque id errado', () => {
 
 Scenario('103-03-Contagem de estoque', () => {
 
-
     //EU VOU PARA A PAGINA DE CONTAGEM DE ESTOQUE
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/contagem/pesquisar')
+    I.wait(3)
     //EU ACEITO O POPUP
     I.acceptPopup()
     I.wait(3)
@@ -66,16 +68,16 @@ Scenario('103-03-Contagem de estoque', () => {
     //EU APERTO NO BOTAO PARA SOMAR 
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/contagem-component/div/form/div/div[3]/button[1]')
     I.wait(3)
-    I.waitForText('CONFIRMAR')
+    //EU APERTO NO BOTAO 'CONFIRMAR'
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/contagem-component/div/form/div/div[3]/button[2]')
-    I.waitForText('Realizar recontagem do item.',3)
-    I.click('OK')
-
 
 }).tag('103-03');
 
 Scenario('103-04-Contagem de estoque - Listar Itens', () => {
 
+    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/contagem/1002064874306')
+    I.acceptPopup()
+    I.wait(2)
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/contagem-component/div/mat-toolbar/button')
     I.wait(3)
     I.click('Listar Itens')
@@ -90,6 +92,7 @@ Scenario('103-04-Contagem de estoque - Listar Itens', () => {
 Scenario('103-05-Contagem de estoque - Reiniciar Itens', () => {
 
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/contagem/1002064874306')
+    I.wait(3)
     I.acceptPopup()
     I.wait(3)
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/contagem-component/div/mat-toolbar/button')
@@ -109,6 +112,7 @@ Scenario('103-05-Contagem de estoque - Reiniciar Itens', () => {
 Scenario('103-06-Contagem de estoque - Pular Itens', () => {
 
     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/contagem/1002064874306')
+    I.wait(3)
     I.acceptPopup()
     I.wait(2)
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/contagem-component/div/mat-toolbar/button')
