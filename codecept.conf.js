@@ -50,7 +50,9 @@ exports.config = {
 
   include: {
     I: './steps_file.js',
-    ZoomMenosPage: "./pages/ZoomMenos.js"
+    ZoomMenosPage: "./pages/ZoomMenos.js",
+
+    vouParaAbaPage: "./pages/VouParaAba.js"
   },
   name: 'Automacao-FLEXTOTAL'
 }

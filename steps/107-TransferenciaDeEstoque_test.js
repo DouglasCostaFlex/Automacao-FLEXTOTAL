@@ -1,5 +1,5 @@
 Feature('TransferenciaDeEstoque').tag('107');
-const { I } = inject()
+const { I, vouParaAbaPage } = inject()
 
 const CdBarraUnidade = ('7898493996633')
 const CdBarraCaixa = ('37898493996634')
@@ -9,12 +9,8 @@ const CdBarraDestino = ('1000121199293')
 Scenario('107-01 Endereço de origem inválido', () => {
 
     //EU VOU PARA A PAGINA 'TRANSFERENCIA DE ESTOUQE'
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
-    I.wait(3)
-    //EU ACEITO O POPUP
-    I.acceptPopup()
-    //EU AGUARDO
-    I.wait(2)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
+
     //EU COLOCO O CODIGO DE ORIGEM INVÁLIDO
     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/trasnferencia-estoque-home/transferencia-estoque-component/div/form/div[1]/mat-form-field/div/div[1]/div/input', '0000')
     //EU CLICO NO BOTAO PARA CONTINUAR
@@ -29,12 +25,8 @@ Scenario('107-01 Endereço de origem inválido', () => {
 Scenario('107-02 Endereço de origem válido', () => {
 
     //EU VOU PARA A PAGINA 'TRANSFERENCIA DE ESTOUQE'
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
-    I.wait(3)
-    //EU ACEITO O POPUP
-    I.acceptPopup('')
-    //EU AGUARDO
-    I.wait(2)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
+  
     //EU COLOCO O CODIGO DE ORIGEM
     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/trasnferencia-estoque-home/transferencia-estoque-component/div/form/div[1]/mat-form-field/div/div[1]/div/input', CdBarraOrigem)
     //EU CLICO NO BOTAO PARA CONTINUAR
@@ -51,12 +43,8 @@ Scenario('107-02 Endereço de origem válido', () => {
 Scenario('107-03 Transferencia de produto por Unidade - Quantidade Maior que o endereço ', () => {
 
     //EU VOU PARA A PAGINA 'TRANSFERENCIA DE ESTOUQE'
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
-    I.wait(3)
-    //EU ACEITO O POPUP
-    I.acceptPopup('')
-    //EU AGUARDO
-    I.wait(2)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
+  
     //EU COLOCO O CODIGO DE ORIGEM CORRETO
     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/trasnferencia-estoque-home/transferencia-estoque-component/div/form/div[1]/mat-form-field/div/div[1]/div/input', CdBarraOrigem)
     //EU CLICO NO BOTAO PARA CONTINUAR
@@ -85,14 +73,10 @@ Scenario('107-03 Transferencia de produto por Unidade - Quantidade Maior que o e
 Scenario('107-04 Transferencia de produto por Unidade - Destino inválido ', () => {
 
     //EU VOU PARA A PAGINA 'TRANSFERENCIA DE ESTOUQE'
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
-    I.wait(3)
-    //EU ACEITO O POPUP
-    I.acceptPopup('')
-    //EU AGUARDO
-    I.wait(2)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
+
     //EU COLOCO O CODIGO DE ORIGEM CORRETO
-    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/trasnferencia-estoque-home/transferencia-estoque-component/div/form/div[1]/mat-form-field/div/div[1]/div/input',CdBarraOrigem)
+    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/trasnferencia-estoque-home/transferencia-estoque-component/div/form/div[1]/mat-form-field/div/div[1]/div/input', CdBarraOrigem)
     //EU CLICO NO BOTAO PARA CONTINUAR
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/trasnferencia-estoque-home/transferencia-estoque-component/div/form/div[1]/button[1]')
     //EU COLOCO O CD DE BARRAS DO PRODUTO PRA VERIFICAR SE CHEGOU NESSA PARTE
@@ -131,12 +115,8 @@ Scenario('107-04 Transferencia de produto por Unidade - Destino inválido ', () 
 Scenario('107-05 Transferencia de produto por Unidade Válido ', () => {
 
     //EU VOU PARA A PAGINA 'TRANSFERENCIA DE ESTOUQE'
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
-    I.wait(3)
-    //EU ACEITO O POPUP
-    I.acceptPopup('')
-    //EU AGUARDO
-    I.wait(2)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
+
     //EU COLOCO O CODIGO DE ORIGEM CORRETO
     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/trasnferencia-estoque-home/transferencia-estoque-component/div/form/div[1]/mat-form-field/div/div[1]/div/input', CdBarraOrigem)
     //EU CLICO NO BOTAO PARA CONTINUAR
@@ -185,12 +165,8 @@ Scenario('107-05 Transferencia de produto por Unidade Válido ', () => {
 Scenario('107-06 Transferencia de produto por Caixa - válido ', () => {
 
     //EU VOU PARA A PAGINA 'TRANSFERENCIA DE ESTOUQE'
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
-    I.wait(3)
-    //EU ACEITO O POPUP
-    I.acceptPopup('')
-    //EU AGUARDO
-    I.wait(2)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
+
     //EU COLOCO O CODIGO DE ORIGEM CORRETO
     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/trasnferencia-estoque-home/transferencia-estoque-component/div/form/div[1]/mat-form-field/div/div[1]/div/input', CdBarraOrigem)
     //EU CLICO NO BOTAO PARA CONTINUAR
@@ -238,12 +214,8 @@ Scenario('107-06 Transferencia de produto por Caixa - válido ', () => {
 Scenario('107-07 Verificando destino válido ', () => {
 
     //EU VOU PARA A PAGINA 'TRANSFERENCIA DE ESTOUQE'
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
-    I.wait(3)
-    //EU ACEITO O POPUP
-    I.acceptPopup('')
-    //EU AGUARDO
-    I.wait(2)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
+ 
     //EU COLOCO O CODIGO DE ORIGEM CORRETO
     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/trasnferencia-estoque-home/transferencia-estoque-component/div/form/div[1]/mat-form-field/div/div[1]/div/input', CdBarraDestino)
     //EU CLICO NO BOTAO PARA CONTINUAR
@@ -265,12 +237,8 @@ Scenario('107-07 Verificando destino válido ', () => {
 Scenario('107-08 Retornando Transferencia válido ', () => {
 
     //EU VOU PARA A PAGINA 'TRANSFERENCIA DE ESTOUQE'
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
-    I.wait(3)
-    //EU ACEITO O POPUP
-    I.acceptPopup('')
-    //EU AGUARDO
-    I.wait(2)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/transferencia/home/transferencia')
+
     //EU COLOCO O CODIGO DE ORIGEM CORRETO
     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/trasnferencia-estoque-home/transferencia-estoque-component/div/form/div[1]/mat-form-field/div/div[1]/div/input', CdBarraDestino)
     //EU CLICO NO BOTAO PARA CONTINUAR

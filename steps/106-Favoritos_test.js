@@ -1,5 +1,5 @@
 // Feature('Favoritos').tag('106');
-// const { I } = inject()
+// const { I,vouParaAbaPage  } = inject()
 
 
 // Scenario('106-01 Relatorios de vendas', () => {

@@ -1,16 +1,11 @@
 Feature('W41-Piking').tag('105');
-const { I, ZoomMenosPage } = inject()
+const { I, vouParaAbaPage } = inject()
 
 
 Scenario('105-01 Filtros', () => {
 
     //EU VOU ATE A PAGINA W29
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/monitor/W41')
-    I.wait(3)
-    //EU ACEITO POPUP
-    I.acceptPopup()
-    //EU ESPERO
-    I.wait(3)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/monitor/W41')
     //EU ABRO A ABA FILTROS
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/monitor-pesquisa-component/div/grid-card-component/div/mat-expansion-panel/mat-expansion-panel-header')
     I.wait(1)
@@ -30,12 +25,7 @@ Scenario('105-02 Filtros - Origem', () => {
 
    
     //EU VOU ATE A PAGINA W29
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/monitor/W41')
-    I.wait(3)
-    //EU ACEITO POPUP
-    I.acceptPopup()
-    //EU ESPERO
-    I.wait(1)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/monitor/W41')
     //EU ABRO A ABA FILTROS
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/monitor-pesquisa-component/div/grid-card-component/div/mat-expansion-panel/mat-expansion-panel-header')
     I.wait(1)
@@ -53,11 +43,7 @@ Scenario('105-03 Filtros - Quantidade', () => {
 
  
     //EU VOU ATE A PAGINA W29
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/monitor/W41')
-    //EU ACEITO POPUP
-    I.acceptPopup()
-    //EU ESPERO
-    I.wait(1)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/monitor/W41')
     //EU ABRO A ABA FILTROS
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/monitor-pesquisa-component/div/grid-card-component/div/mat-expansion-panel/mat-expansion-panel-header')
     I.wait(1)
@@ -75,11 +61,7 @@ Scenario('105-03 Filtros - Quantidade', () => {
 Scenario('105-04 Filtros - Fim. End Origem', () => {
 
     //EU VOU ATE A PAGINA W29
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/monitor/W41')
-    //EU ACEITO POPUP
-    I.acceptPopup()
-    //EU ESPERO
-    I.wait(1)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/monitor/W41')
     //EU ABRO A ABA FILTROS
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/monitor-pesquisa-component/div/grid-card-component/div/mat-expansion-panel/mat-expansion-panel-header')
     I.wait(1)
@@ -97,11 +79,7 @@ Scenario('105-04 Filtros - Fim. End Origem', () => {
 Scenario('105-05 Filtros - Fim. Destino', () => {
 
     //EU VOU ATE A PAGINA W29
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/monitor/W41')
-    //EU ACEITO POPUP
-    I.acceptPopup()
-    //EU ESPERO
-    I.wait(1)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/monitor/W41')
     //EU ABRO A ABA FILTROS
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/monitor-pesquisa-component/div/grid-card-component/div/mat-expansion-panel/mat-expansion-panel-header')
     I.wait(1)
@@ -119,11 +97,7 @@ Scenario('105-05 Filtros - Fim. Destino', () => {
 Scenario('105-06 Filtros - Situação', () => {
 
     //EU VOU ATE A PAGINA W29
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/monitor/W41')
-    //EU ACEITO POPUP
-    I.acceptPopup()
-    //EU ESPERO
-    I.wait(1)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/monitor/W41')
     //EU ABRO A ABA FILTROS
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/monitor-pesquisa-component/div/grid-card-component/div/mat-expansion-panel/mat-expansion-panel-header')
     I.wait(1)
@@ -141,11 +115,7 @@ Scenario('105-06 Filtros - Situação', () => {
 Scenario('105-07 Filtros - Eu ia. Tarefa', async () => {
   
     //EU VOU ATE A PAGINA W29
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/monitor/W41')
-    //EU ACEITO POPUP
-    I.acceptPopup()
-    //EU ESPERO
-    I.wait(1)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/monitor/W41')
     //EU ABRO A ABA FILTROS
     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/monitor-pesquisa-component/div/grid-card-component/div/mat-expansion-panel/mat-expansion-panel-header')
     I.wait(1)

@@ -1,5 +1,5 @@
 Feature('TelaInicialAppWMS').tag('AppWMS');
-const { I, ZoomMenosPage } = inject()
+const { I, vouParaAbaPage  } = inject()
 
 const BtnMenu = '/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/mat-toolbar/button'
 const FLEXTOTAL = 'https://192.168.1.128:9090/flextotal/login'
@@ -13,9 +13,8 @@ Scenario('101-01-Tela do AppWMS', () => {
 
     
     //VOU NA TELA WMS
-    I.amOnPage('https://192.168.1.128:9090/flextotal/user/coletor')
-    I.acceptPopup()
-    I.wait(1)
+    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/coletor')
+   
 
 });
 

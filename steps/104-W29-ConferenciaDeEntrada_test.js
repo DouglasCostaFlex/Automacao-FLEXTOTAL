@@ -1,20 +1,18 @@
 // Feature('ConferenciaDeEntrada').tag('104');
-// const { I, ZoomMenosPage } = inject()
+// const { I, vouParaAbaPage } = inject()
 
-
+// const IdGeralInvalido = ('0000001 ')
+// const IdGeralValido = ('1002704747906')
 
 // //CONFERENCIA DE ENTRADA
 
 // Scenario('104-01-Conferencia de entrada - inválido', () => {
 
 //     //EU VOU ATE A PAGINA W29
-//     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/pesquisar')
-//     //EU ACEITO POPUP
-//     I.acceptPopup()
-//     //EU ESPERO
-//     I.wait(2)
+//     vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/pesquisar')
+   
 //     //EU COLOCO O ID GERAL INVÁLIDO
-//     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[1]/mat-form-field/div/div[1]/div/textarea', '0000001 ')
+//     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[1]/mat-form-field/div/div[1]/div/textarea',IdGeralInvalido)
 //     //EU ESPERO    
 //     I.wait(1)
 //     //EU CLICO NO BOTAO PESQUISAR
@@ -28,13 +26,10 @@
 // Scenario('104-02-Conferencia de entrada - válido', () => {
 
 //     //EU VOU ATE A PAGINA W29
-//     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/pesquisar')
-//     //EU ACEITO POPUP
-//     I.acceptPopup()
-//     //EU ESPERO
-//     I.wait(2)
+//     vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/pesquisar')
+   
 //     //EU COLOCO O ID GERAL 
-//     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[1]/mat-form-field/div/div[1]/div/textarea', '1002704747906 ')
+//     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[1]/mat-form-field/div/div[1]/div/textarea', IdGeralValido)
 //     //EU ESPERO    
 //     I.wait(1)
 //     //EU CLICO NO BOTAO PESQUISAR
@@ -68,8 +63,8 @@
 
 
 //     //EU RECARREGO A PAGINA
-//     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
-//     I.acceptPopup()
+//     vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
+   
 //     //EU COLOCO O CD DDE BARRAS DO PRODUTO
 //     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[2]/mat-form-field/div/div[1]/div/input', '1234')
 //     //EU ESPERO
@@ -94,9 +89,8 @@
 // Scenario('104-05-Conferencia de entrada por unidade - Menu - Listar Itens ', () => {
 
 //     //EU RECARREGO A PAGINA
-//     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
-//     //ACEITO O POPUP
-//     I.acceptPopup()
+//     vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
+ 
 //     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/mat-toolbar/button')
 //     I.wait(2)
 //     I.click('Listar Itens')
@@ -108,9 +102,8 @@
 // Scenario('104-06-Conferencia de entrada por unidade - Menu - Informar Quantidade inválido', () => {
 
   
-//     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
-//     //ACEITO O POPUP
-//     I.acceptPopup()
+//     vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
+   
 //     //EU CLICO NO BOTAO 'MENU'
 //     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/mat-toolbar/button')
 //     I.wait(2)
@@ -129,9 +122,8 @@
 // Scenario('104-07-Conferencia de entrada por unidade - Menu - Informar Quantidade válido', () => {
 
  
-//     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
-//     //ACEITO O POPUP
-//     I.acceptPopup()
+//     vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
+   
 //     //EU CLICO NO BOTAO 'MENU'
 //     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/mat-toolbar/button')
 //     I.wait(2)
@@ -149,9 +141,8 @@
 
 // Scenario('104-08-Conferencia de entrada por unidade - Menu - Enviar Pendentes ', () => {
     
-//     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
-//     //ACEITO O POPUP
-//     I.acceptPopup()
+//     vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
+ 
 //     //EU CLICO NO BOTAO 'MENU'
 //     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/mat-toolbar/button')
 //     I.wait(2)
@@ -163,10 +154,8 @@
 
 // Scenario('104-09-Conferencia de entrada por unidade - Menu - Reiniciar Conferência ', () => {
 
-//     I.amOnPage('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
-//     //ACEITO O POPUP
-//     I.acceptPopup()
-//     I.wait(2)
+//     vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
+   
 //     //EU CLICO NO BOTAO 'MENU'
 //     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/mat-toolbar/button')
 //     I.wait(2)
