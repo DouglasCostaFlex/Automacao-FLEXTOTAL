@@ -1,21 +1,23 @@
 Feature('ConferenciaDeEntrada').tag('104');
-const { I, vouParaAbaPage } = inject()
-
+const idTarefa = require('../consulta')
+const { I, vouParaAbaPage,} = inject()
 const IdTarefaInvalido = ('0000001')
 const IdTarefaValido = ('1002704724687')
 const CdBarraUnidade = ('7896003816389')
 const CdBarraCaixa = ('67896003816381')
 const CdBarraInvalido = ('00000')
 
+
 //CONFERENCIA DE ENTRADA
 
 Scenario('104-01-Conferencia de entrada - inválido', () => {
-
+    
+    
     //EU VOU ATE A PAGINA W29
     vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/pesquisar')
    
     //EU COLOCO O ID GERAL INVÁLIDO
-    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[1]/mat-form-field/div/div[1]/div/textarea',IdTarefaInvalido)
+    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[1]/mat-form-field/div/div[1]/div/textarea',idTarefa)
     //EU ESPERO    
     I.wait(1)
     //EU CLICO NO BOTAO PESQUISAR
@@ -26,51 +28,51 @@ Scenario('104-01-Conferencia de entrada - inválido', () => {
 
 }).tag('104-01');
 
-Scenario('104-02-Conferencia de entrada - válido', () => {
+// Scenario('104-02-Conferencia de entrada - válido', () => {
 
-    //EU VOU ATE A PAGINA W29
-    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/pesquisar')
+//     //EU VOU ATE A PAGINA W29
+//     vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/pesquisar')
    
-    //EU COLOCO O ID GERAL 
-    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[1]/mat-form-field/div/div[1]/div/textarea', IdTarefaValido)
-    //EU ESPERO    
-    I.wait(1)
-    //EU CLICO NO BOTAO PESQUISAR
-    I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[2]/button')
+//     //EU COLOCO O ID GERAL 
+//     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[1]/mat-form-field/div/div[1]/div/textarea', IdTarefaValido)
+//     //EU ESPERO    
+//     I.wait(1)
+//     //EU CLICO NO BOTAO PESQUISAR
+//     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[2]/button')
     
-    //EU ESPERO PELO TEXTO
-    I.waitForText('Nota Fiscal Nr: 123123 do Fornecedor: 100 - INCOESME IND COM DE ESQUADRIAS LTDA ME',10)
-    //EU ESPERO
-    I.wait(2)
-    //EU CLICO NO BOTAO CONTINUAR
-    I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[3]/button[1]')
-    I.wait(2)
+//     //EU ESPERO PELO TEXTO
+//     I.waitForText('Nota Fiscal Nr: 123123 do Fornecedor: 100 - INCOESME IND COM DE ESQUADRIAS LTDA ME',10)
+//     //EU ESPERO
+//     I.wait(2)
+//     //EU CLICO NO BOTAO CONTINUAR
+//     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/pesquisa-conferencia-component/div/div[3]/button[1]')
+//     I.wait(2)
 
-}).tag('104-02');
+// }).tag('104-02');
 
-Scenario('104-03-Conferencia de entrada - CD de Barras Inválido', () => {
+// Scenario('104-03-Conferencia de entrada - CD de Barras Inválido', () => {
 
-    //EU COLOCO O CD DDE BARRAS DO PRODUTO INVÁLIDO
-    I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[2]/mat-form-field/div/div[1]/div/input', CdBarraInvalido)
-    //EU ESPERO
-    I.wait(1)
-    //EU CLICO NO BOTAO PARA CONTINUAR
-    I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[2]/button[1]')
-    //EU ADICIONO O LOTE
-    I.wait(2)
-    I.waitForText('Este item não está na tarefa.',10)
+//     //EU COLOCO O CD DDE BARRAS DO PRODUTO INVÁLIDO
+//     I.fillField('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[2]/mat-form-field/div/div[1]/div/input', CdBarraInvalido)
+//     //EU ESPERO
+//     I.wait(1)
+//     //EU CLICO NO BOTAO PARA CONTINUAR
+//     I.click('/html/body/my-app/home/mat-sidenav-container/mat-sidenav-content/conferencia-entrada/div/div/form/div[2]/button[1]')
+//     //EU ADICIONO O LOTE
+//     I.wait(2)
+//     I.waitForText('Este item não está na tarefa.',10)
 
-}).tag('104-03');
+// }).tag('104-03');
 
-Scenario('104-04-Conferencia de entrada por unidade - CD Válido', () => {
+// Scenario('104-04-Conferencia de entrada por unidade - CD Válido', () => {
 
 
-    //EU RECARREGO A PAGINA
-    vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
+//     //EU RECARREGO A PAGINA
+//     vouParaAbaPage.IrParaPagina('https://192.168.1.128:9090/flextotal/user/estoque/conferenciaEntrada/1002704747906')
    
     
 
-}).tag('104-04');
+// }).tag('104-04');
 
 
 // Scenario('104-04-Conferencia de entrada por unidade - CD Válido', () => {

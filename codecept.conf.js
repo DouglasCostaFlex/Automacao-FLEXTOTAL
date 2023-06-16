@@ -52,7 +52,8 @@ exports.config = {
     I: './steps_file.js',
     ZoomMenosPage: "./pages/ZoomMenos.js",
 
-    vouParaAbaPage: "./pages/VouParaAba.js"
+    vouParaAbaPage: "./pages/VouParaAba.js",
+    conectarPage: "./consulta.js"
   },
   name: 'Automacao-FLEXTOTAL'
 }
